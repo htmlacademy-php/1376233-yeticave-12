@@ -1,50 +1,46 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = 'Alex'; // укажите здесь ваше имя
-?>
+$user_name = 'Alex';
 
-<?php
 $categories = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
-?>
 
-<?php
-$lot1 = [
+$lots__item = [
     [
-        'lot_title1' => '2014 Rossignol District Snowboard',
-        'lot_category1' => 'Доски и лыжи',
-        'lot_cost1' => 10999,
-        'img_lot1' => 'img/lot-1.jpg'
+        'lot_title' => '2014 Rossignol District Snowboard',
+        'lot_category' => 'Доски и лыжи',
+        'lot_cost' => 10999,
+        'lot_img' => 'img/lot-1.jpg'
     ],
     [
-        'lot_title1' => 'DC Ply Mens 2016/2017 Snowboard',
-        'lot_category1' => 'Доски и лыжи',
-        'lot_cost1' => 159999,
-        'img_lot1' => 'img/lot-2.jpg'
+        'lot_title' => 'DC Ply Mens 2016/2017 Snowboard',
+        'lot_category' => 'Доски и лыжи',
+        'lot_cost' => 159999,
+        'lot_img' => 'img/lot-2.jpg'
     ],
     [
-        'lot_title1' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-        'lot_category1' => 'Крепления',
-        'lot_cost1' => 8000,
-        'img_lot1' => 'img/lot-3.jpg'
+        'lot_title' => 'Крепления Union Contact Pro 2015 года размер L/XL',
+        'lot_category' => 'Крепления',
+        'lot_cost' => 8000,
+        'lot_img' => 'img/lot-3.jpg'
     ],
     [
-        'lot_title1' => 'Ботинки для сноуборда DC Mutiny Charocal',
-        'lot_category1' => 'Ботинки',
-        'lot_cost1' => 10999,
-        'img_lot1' => 'img/lot-4.jpg'
+        'lot_title' => 'Ботинки для сноуборда DC Mutiny Charocal',
+        'lot_category' => 'Ботинки',
+        'lot_cost' => 10999,
+        'lot_img' => 'img/lot-4.jpg'
     ],
     [
-        'lot_title1' => 'Куртка для сноуборда DC Mutiny Charocal',
-        'lot_category1' => 'Одежда',
-        'lot_cost1' => 7500,
-        'img_lot1' => 'img/lot-5.jpg'
+        'lot_title' => 'Куртка для сноуборда DC Mutiny Charocal',
+        'lot_category' => 'Одежда',
+        'lot_cost' => 7500,
+        'lot_img' => 'img/lot-5.jpg'
     ],
     [
-        'lot_title1' => 'Маска Oakley Canopy',
-        'lot_category1' => 'Разное',
-        'lot_cost1' => 5400,
-        'img_lot1' => 'img/lot-6.jpg'
+        'lot_title' => 'Маска Oakley Canopy',
+        'lot_category' => 'Разное',
+        'lot_cost' => 5400,
+        'lot_img' => 'img/lot-6.jpg'
     ],
 ]
 ?>
@@ -90,7 +86,7 @@ $lot1 = [
                             </li>
                         </ul>
                     <?php endif ?>
-                    <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
+
                 </nav>
             </div>
         </header>
@@ -100,7 +96,6 @@ $lot1 = [
                 <h2 class="promo__title">Нужен стафф для катки?</h2>
                 <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
                 <ul class="promo__list">
-                    <!--заполните этот список из массива категорий-->
 
                     <?php foreach ($categories as $category) : ?>
                         <li class="promo__item promo__item--boards">
@@ -116,11 +111,10 @@ $lot1 = [
 
                 <ul class="lots__list">
 
-                    <!--заполните этот список из массива с товарами-->
-                    <?php foreach ($lot1 as $key => $item) : ?>
+                    <?php foreach ($lots__item as $item) : ?>
                         <li class="lots__item lot">
                             <div class="lot__image">
-                                <img src="<?= $item['img_lot1']; ?>" width="350" height="260" alt="">
+                                <img src="<?= $item['lot_img']; ?>" width="350" height="260" alt="">
                             </div>
                             <div class="lot__info">
                                 <span class="lot__category">Название категории</span>
@@ -128,7 +122,7 @@ $lot1 = [
                                 <div class="lot__state">
                                     <div class="lot__rate">
                                         <span class="lot__amount">Стартовая цена</span>
-                                        <span class="lot__cost"><?= $item['lot_cost1'] ?><b class="rub">р</b></span>
+                                        <span class="lot__cost"><?= $item['lot_cost'] ?><b class="rub">р</b></span>
                                     </div>
                                     <div class="lot__timer timer">
                                         12:23
@@ -152,7 +146,7 @@ $lot1 = [
 
                     </li>
                 <?php endforeach; ?>
-                <!--заполните этот список из массива категорий-->
+
             </ul>
         </nav>
         <div class="main-footer__bottom container">
